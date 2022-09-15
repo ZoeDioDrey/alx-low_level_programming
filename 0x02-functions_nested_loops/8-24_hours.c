@@ -1,23 +1,22 @@
-#include "holberton.h"
-#include <stdio.h>
-
+#include "main.h"
 /**
- * jack_bauer - print every minute of jack bauer.
- *
+ * jack_bauer - prints time table in this format: HH:MM
+ * Return: the sum of two numbers.
  */
 void jack_bauer(void)
 {
-	int hour;
-	int minute;
+	int h, m;
 
-	for (hour = 0; hour <= 23; hour++)
-	for (minute = 0; minute <= 59; minute++)
+	for (h = 0; h < 24; h++)
 	{
-		_putchar('0' + hour / 10);
-		_putchar('0' + hour % 10);
-		_putchar(':');
-		_putchar('0' + minute / 10);
-		_putchar('0' + minute % 10);
-		_putchar('\n');
+		for (m = 0; m < 60; m++)
+		{
+			_putchar((h / 10) + '0');
+			_putchar((h % 10) + '0');
+			_putchar(':');
+			_putchar((m / 10) + '0');
+			_putchar((m % 10) + '0');
+			_putchar('\n');
+		}
 	}
 }
